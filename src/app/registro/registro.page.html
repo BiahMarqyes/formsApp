@@ -8,32 +8,34 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="formRegistro">
     <ion-item>
-      <ion-label>Nome:</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">Nome:</ion-label>
+      <ion-input formControlName="nome"></ion-input>
     </ion-item>
 
    <ion-item>
-      <ion-label>CPF:</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">CPF:</ion-label>
+      <ion-input formControlName="cpf"></ion-input>
     </ion-item>
 
    <ion-item>
-      <ion-label>Email:</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input formControlName="email"></ion-input>
     </ion-item>
 
    <ion-item>
-      <ion-label>Senha:</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">Senha:</ion-label>
+      <ion-input type="password" formControlName="senha"></ion-input>
     </ion-item>
 
    <ion-item>
-      <ion-label>Confirmar senha:</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">Confirmar senha:</ion-label>
+      <ion-input type="password" formControlName="confirmarSenha"></ion-input>
     </ion-item>
 
-   <ion-button expand="full" >Salvar</ion-button>
+   <ion-button expand="full" (click)="salvarRegistro()">Salvar</ion-button>
 
    <ion-button expand="full">Voltar</ion-button>
+  </form>
 </ion-content>
