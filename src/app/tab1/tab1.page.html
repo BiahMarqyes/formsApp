@@ -13,4 +13,21 @@
   <ion-item routerLink="/login">Faça seu login!</ion-item>
   <br>
   <ion-item routerLink="/registro">Não tem login? Faça seu registro!</ion-item>
+
+  <ion-item-sliding *ngFor="let user of listaUsuarios">
+    <ion-item>
+      <ion-label>
+        <div>
+          <h1>{{user.nome}}</h1>
+          <span style="float: right;">{{user.cpf}}</span>
+        </div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-content>
