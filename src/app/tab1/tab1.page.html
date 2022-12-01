@@ -20,12 +20,13 @@
         <div>
           <h1>{{user.nome}}</h1>
           <span style="float: right;">{{user.cpf}}</span>
+          <a href="mailto:{{user.nome}}">{{user.nome}}</a>
         </div>
       </ion-label>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="danger">
+      <ion-item-option color="danger" (click)="excluirRegistro(user.email)">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-item-option>
     </ion-item-options>
