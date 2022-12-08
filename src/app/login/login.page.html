@@ -1,10 +1,14 @@
 <ion-header>
   <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-button>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="medium">
+  <ion-card>
   <form [formGroup]="formLogin">
 
     <ion-item>
@@ -12,7 +16,7 @@
       <ion-input formControlName="email"></ion-input>
       <ng-container *ngFor="let erro of mensagens.email">
         <span class="msg-erro"
-        *ngIf="formRegistro.get('email').hasError(erro.tipo) && (formRegistro.get('email').dirty || formRegistro.get('email').touched)">
+        *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email').touched)">
           {{erro.mensagem}}
         </span>
       </ng-container>
@@ -23,16 +27,17 @@
       <ion-input type="password" formControlName="senha"></ion-input>
       <ng-container *ngFor="let erro of mensagens.senha">
         <span class="msg-erro"
-        *ngIf="formRegistro.get('senha').hasError(erro.tipo) && (formRegistro.get('senha').dirty || formRegistro.get('senha').touched)">
+        *ngIf="formLogin.get('senha').hasError(erro.tipo) && (formLogin.get('senha').dirty || formLogin.get('senha').touched)">
           {{erro.mensagem}}
         </span>
       </ng-container>
     </ion-item>
 
-  <ion-button expand="full">Entrar</ion-button>
+  <ion-button expand="full" (click)="salvarLogin()">ENTRAR</ion-button>
 
-  <ion-button expand="full">Registrar</ion-button>
+  <ion-button expand="full" routerLink="/registro">REGISTRAR-SE</ion-button>
 
   <ion-button expand="full">Esqueceu a senha?</ion-button>
 </form>
+</ion-card>
 </ion-content>
